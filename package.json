@@ -1,5 +1,6 @@
 {
   "name": "@simbafs/og",
+  "private": false,
   "version": "1.0.0",
   "description": "statically generate og image in png based on provided information",
   "keywords": [
