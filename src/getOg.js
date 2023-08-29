@@ -21,14 +21,13 @@ const matter = require('gray-matter')
  */
 async function getOg(data, opt) {
     opt = {
-        template: './template/blog.simbafs.cc.js',
+        template: '../template/blog.simbafs.cc.js',
         width: 1200,
         height: 600,
         font: '~/.local/share/fonts/jf-openhuninn-1.1.ttf',
         ...opt
     }
 
-    opt.template = path.resolve(path.join(opt.template))
     opt.font = path.resolve(opt.font.replace(/^~/, process.env.HOME))
 
     const { html } = await import('satori-html')
