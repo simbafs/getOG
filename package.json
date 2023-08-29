@@ -1,12 +1,19 @@
 {
-  "name": "getog",
+  "name": "@simbafs/og",
   "version": "1.0.0",
-  "description": " statically generate og image in png based on provided information ",
-  "main": "index.js",
+  "description": "statically generate og image in png based on provided information",
+  "main": "src/getOg.js",
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "SimbaFs <simba.fs@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.4.1",
+    "gray-matter": "^4.0.3",
+    "satori": "^0.10.3",
+    "satori-html": "^0.3.2"
+  }
 }

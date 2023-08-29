@@ -1,6 +1,8 @@
 const satori = require('satori')
 const fs = require('fs')
 const { Resvg } = require('@resvg/resvg-js')
+const path = require('path')
+const matter = require('gray-matter')
 
 /**
  * generate og image from provided information
@@ -17,7 +19,7 @@ const { Resvg } = require('@resvg/resvg-js')
  *
  * @returns {Promise<{ png: Buffer, svg: string }>}
  */
-async function getOG(data, opt) {
+async function getOg(data, opt) {
     opt = {
         template: './template/blog.simbafs.cc.js',
         width: 1200,
@@ -26,9 +28,12 @@ async function getOG(data, opt) {
         ...opt
     }
 
+    opt.template = path.resolve(path.join(opt.template))
+    opt.font = path.resolve(opt.font.replace(/^~/, process.env.HOME))
+
     const { html } = await import('satori-html')
     const og = require(opt.template)(html)
-    const font = fs.readFileSync('/home/simba/.local/share/fonts/jf-openhuninn-1.1.ttf')
+    const font = fs.readFileSync(opt.font)
 
     // console.log(JSON.stringify(og(data), null, 2))
 
@@ -61,7 +66,31 @@ async function getOG(data, opt) {
         })
 }
 
-module.exports = getOG
+async function getOgFromMd({ inFile, outFile, font, template, author }) {
+    const file = fs.readFileSync(inFile).toString()
+    const { data } = matter(file)
+
+    const ogData = {
+        title: data.title,
+        subtitle: `${data.date} by ${data.author || author}`,
+        tags: data.tags.slice(0, 5),
+    }
+
+    const opt = {}
+    if (font) opt.font = font
+    if (template) opt.template = template
+
+    getOg(ogData, opt).then(({ png }) => {
+        const dir = path.dirname(outFile)
+        fs.mkdirSync(dir, { recursive: true })
+        fs.writeFileSync(outFile, png)
+    })
+}
+
+module.exports = {
+    getOg,
+    getOgFromMd,
+}
 
 // getOG({
 //     title: 'title title title title title title title title title title title title title title title title',

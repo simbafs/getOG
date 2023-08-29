@@ -113,11 +113,9 @@ module.exports =
 						bottom: 20px;
 						right: 30px;
 						font-size: 20px;
-
-						text-transform: uppercase;
 					"
 				>
-					${tags}
+					${tags.join(', ')}
 				</div>
 			</div>
 		</div>`
