@@ -2,14 +2,26 @@
   "name": "@simbafs/og",
   "version": "1.0.0",
   "description": "statically generate og image in png based on provided information",
+  "keywords": [
+    "og",
+    "svg",
+    "auto generate",
+    "markdown"
+  ],
+  "author": "SimbaFs <simba.fs@gmail.com>",
+  "license": "MIT",
   "main": "src/getOg.js",
-  "bin": "index.js",
+  "bin": {
+    "og": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simbafs/og.git"
+  },
+  "preferGlobal": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "SimbaFs <simba.fs@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "@resvg/resvg-js": "^2.4.1",
     "gray-matter": "^4.0.3",
