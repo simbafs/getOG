@@ -1,10 +1,15 @@
 # getOG
 statically generate og image in png based on provided information
 
+## Installation
+```
+$ npm i @simbafs/og
+```
+
 ## usage
 ### CLI
 ```
-$ node index.js --in path/to/your/post.md
+$ og --in path/to/your/post.md
 ```
 
 the generated og image will be placed in `og/path/to/your/post.png`
