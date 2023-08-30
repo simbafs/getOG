@@ -9,7 +9,21 @@ $ npm i @simbafs/og
 ## usage
 ### CLI
 ```
-$ og --in path/to/your/post.md
+$ node index.js path/to/your/post.md
+```
+
+```
+Usage: index [options] <input> [output]
+
+Arguments:
+  input              the input markdown file
+  output             the output png file, default og/${input}
+
+Options:
+  --author <name>
+  --font <path>
+  --template <path>
+  -h, --help         display help for command
 ```
 
 the generated og image will be placed in `og/path/to/your/post.png`
