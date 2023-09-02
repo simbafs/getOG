@@ -48,6 +48,9 @@ getOg({
 
 ![og](./og.png)
 
+## Batch
+To generate og images in batches, you can try my [script](https://github.com/simbafs/blog/tree/main/script/frontmatter). I may integratein to this in the future.
+
 ## Docs
 ### getOg
 TODO

@@ -9,7 +9,7 @@
     "auto generate",
     "markdown"
   ],
-  "author": "SimbaFs <simba.fs@gmail.com>",
+  "author": "SimbaFs <me@simbafs.cc>",
   "license": "MIT",
   "main": "src/getOg.js",
   "bin": {
