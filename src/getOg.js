@@ -24,7 +24,7 @@ async function getOg(data, opt) {
         template: '../template/blog.simbafs.cc.js',
         width: 1200,
         height: 600,
-        font: '~/.local/share/fonts/jf-openhuninn-1.1.ttf',
+        font: '~/.local/share/fonts/jf-openhuninn-2.0.ttf',
         ...opt
     }
 
