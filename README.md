@@ -1,13 +1,17 @@
 # getOG
+
 statically generate og image in png based on provided information
 
 ## Installation
+
 ```
 $ npm i @simbafs/og
 ```
 
 ## usage
+
 ### CLI
+
 ```
 $ node index.js path/to/your/post.md
 ```
@@ -29,11 +33,12 @@ Options:
 the generated og image will be placed in `og/path/to/your/post.png`
 
 ### Lib
+
 ```js
 const { getOg, getOgFromMd } = require('@simbafs/og')
 const fs = require('fs')
 
-getOg({ 
+getOg({
     title: 'Auto Generate OG Image',
     subtitle: '2023/08/29 by SimbaFs',
     tags: ['og', 'image', 'svg'],
@@ -49,11 +54,15 @@ getOg({
 ![og](./og.png)
 
 ## Batch
+
 To generate og images in batches, you can try my [script](https://github.com/simbafs/blog/tree/main/script/frontmatter). I may integratein to this in the future.
 
 ## Docs
+
 ### getOg
+
 TODO
 
 ### getOgFromMd
+
 TODO

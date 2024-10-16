@@ -1,7 +1,8 @@
 {
   "name": "@simbafs/og",
+  "type": "module",
   "private": false,
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "statically generate og image in png based on provided information",
   "keywords": [
     "og",
@@ -11,24 +12,34 @@
   ],
   "author": "SimbaFs <me@simbafs.cc>",
   "license": "MIT",
-  "main": "src/getOg.js",
+  "types": "./dist/getOg.js",
+  "main": "./dist/getOg.js",
   "bin": {
     "og": "./index.js"
   },
+  "files": [
+    "./dist/"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/simbafs/og.git"
   },
   "preferGlobal": true,
   "scripts": {
+    "build": "tsc",
     "npm:publish": "npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.4.1",
     "commander": "^11.0.0",
+    "font-finder": "^1.1.0",
     "gray-matter": "^4.0.3",
     "satori": "^0.10.3",
     "satori-html": "^0.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "prettier-plugin-ejs": "^1.0.3"
   }
 }
